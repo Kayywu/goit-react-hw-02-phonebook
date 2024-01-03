@@ -1,16 +1,20 @@
-import React from 'react';
-import styles from './Filter.module.css';
+import React, { Component } from 'react';
+import styles from './Filter.module.css'; 
 
-const Filter = ({ value, onChange }) => {
-  return (
-    <input
-      type="text"
-      className={styles.searchInput}
-      placeholder="Search contacts..."
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    />
-  );
-};
+class Filter extends Component {
+  render() {
+    const { value, onChange } = this.props;
+
+    return (
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={styles.searchInput}
+        placeholder="Search contacts..."
+      />
+    );
+  }
+}
 
 export default Filter;
